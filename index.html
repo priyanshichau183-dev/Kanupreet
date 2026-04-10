@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KANUPRIT Salon - Modern Hair & Beauty</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">KANUPRIT</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
+                <button class="book-btn" onclick="openModal('bookingModal')">Book Now</button>
+                <button id="authBtn" class="signup-btn" onclick="openModal('signupModal')">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <canvas id="particles"></canvas>
+        <div class="hero-content">
+            <div class="hero-badge">✨ Premium Salon Experience</div>
+            <h1>Transform Your <span class="gradient-text">Look</span></h1>
+            <p>Where artistry meets elegance. Step in, stand out.</p>
+            <div class="hero-btns">
+                <button class="cta-btn" onclick="openModal('bookingModal')">Book Appointment</button>
+                <a href="#services" class="cta-outline">Explore Services</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><span class="stat-num">8+</span><span class="stat-label">Years Experience</span></div>
+                <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Expert Stylists</span></div>
+                <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Services Offered</span></div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-dot"></div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">What We Offer</span>
+                <h2>Our Services</h2>
+                <p>Crafted with care, delivered with passion</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" onclick="openModal('bookingModal')">
+                    <div class="service-icon-wrap" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                        <span class="service-icon">✂️</span>
+                    </div>
+                    <h3>Classic Cut</h3>
+                    <p>Timeless precision cuts tailored to your face shape and lifestyle</p>
+                    <div class="service-footer">
+                        <span class="price">₹1,200</span>
+                        <span class="duration">⏱ 45 min</span>
+                    </div>
+                </div>
+                <div class="service-card" onclick="openModal('bookingModal')">
+                    <div class="service-icon-wrap" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                        <span class="service-icon">🎨</span>
+                    </div>
+                    <h3>Color & Highlights</h3>
+                    <p>Vibrant, long-lasting color with premium products</p>
+                    <div class="service-footer">
+                        <span class="price">₹2,500</span>
+                        <span class="duration">⏱ 2 hrs</span>
+                    </div>
+                </div>
+                <div class="service-card" onclick="openModal('bookingModal')">
+                    <div class="service-icon-wrap" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                        <span class="service-icon">💨</span>
+                    </div>
+                    <h3>Styling & Blowout</h3>
+                    <p>Salon-perfect finish for any occasion or event</p>
+                    <div class="service-footer">
+                        <span class="price">₹900</span>
+                        <span class="duration">⏱ 30 min</span>
+                    </div>
+                </div>
+                <div class="service-card" onclick="openModal('bookingModal')">
+                    <div class="service-icon-wrap" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">
+                        <span class="service-icon">🌿</span>
+                    </div>
+                    <h3>Treatment & Care</h3>
+                    <p>Deep nourishment and restoration for damaged hair</p>
+                    <div class="service-footer">
+                        <span class="price">₹1,800</span>
+                        <span class="duration">⏱ 1 hr</span>
+                    </div>
+                </div>
+                <div class="service-card" onclick="openModal('bookingModal')">
+                    <div class="service-icon-wrap" style="background: linear-gradient(135deg, #fa709a, #fee140);">
+                        <span class="service-icon">💅</span>
+                    </div>
+                    <h3>Bridal Package</h3>
+                    <p>Complete bridal makeover for your special day</p>
+                    <div class="service-footer">
+                        <span class="price">₹8,500</span>
+                        <span class="duration">⏱ 4 hrs</span>
+                    </div>
+                </div>
+                <div class="service-card" onclick="openModal('bookingModal')">
+                    <div class="service-icon-wrap" style="background: linear-gradient(135deg, #a18cd1, #fbc2eb);">
+                        <span class="service-icon">🧖</span>
+                    </div>
+                    <h3>Scalp Spa</h3>
+                    <p>Relaxing scalp massage and deep conditioning ritual</p>
+                    <div class="service-footer">
+                        <span class="price">₹1,500</span>
+                        <span class="duration">⏱ 50 min</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Work</span>
+                <h2>Style Gallery</h2>
+                <p>A glimpse of transformations we've created</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <div class="gallery-overlay"><span>Classic Elegance</span></div>
+                </div>
+                <div class="gallery-item tall" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="gallery-overlay"><span>Bold Colors</span></div>
+                </div>
+                <div class="gallery-item" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div class="gallery-overlay"><span>Sleek Blowout</span></div>
+                </div>
+                <div class="gallery-item wide" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                    <div class="gallery-overlay"><span>Natural Glow</span></div>
+                </div>
+                <div class="gallery-item" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <div class="gallery-overlay"><span>Bridal Look</span></div>
+                </div>
+                <div class="gallery-item" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);">
+                    <div class="gallery-overlay"><span>Spa Ritual</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule -->
+    <section id="schedule" class="schedule">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Visit Us</span>
+                <h2>Opening Hours</h2>
+                <p>We're here when you need us</p>
+            </div>
+            <div class="schedule-wrap">
+                <div class="schedule-content">
+                    <div class="schedule-item">
+                        <span class="day">Monday – Friday</span>
+                        <span class="time">9:00 AM – 8:00 PM</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="day">Saturday</span>
+                        <span class="time">10:00 AM – 6:00 PM</span>
+                    </div>
+                    <div class="schedule-item closed">
+                        <span class="day">Sunday</span>
+                        <span class="time closed-tag">Closed</span>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <div class="location-icon">📍</div>
+                    <h3>Find Us</h3>
+                    <p>123 Style Street, Beauty Lane<br>New Delhi, India 110001</p>
+                    <p class="location-phone">📞 +91 98765 43210</p>
+                    <p class="location-email">✉️ hello@kanuprit.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header light">
+                <span class="section-tag">Reach Out</span>
+                <h2>Get In Touch</h2>
+                <p>We'd love to hear from you</p>
+            </div>
+            <form class="contact-form" onsubmit="handleQuery(event)">
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <input type="tel" name="phone" placeholder="Phone Number">
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <button class="close" onclick="closeModal('bookingModal')" aria-label="Close">&times;</button>
+            <h2>Book Appointment</h2>
+            <form class="booking-form" onsubmit="handleBooking(event)">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone" required>
+                <select name="service" required>
+                    <option value="">Select Service</option>
+                    <option value="classic">Classic Cut – ₹1,200</option>
+                    <option value="color">Color & Highlights – ₹2,500</option>
+                    <option value="styling">Styling & Blowout – ₹900</option>
+                    <option value="treatment">Treatment & Care – ₹1,800</option>
+                    <option value="bridal">Bridal Package – ₹8,500</option>
+                    <option value="scalp">Scalp Spa – ₹1,500</option>
+                </select>
+                <input type="date" name="date" id="bookingDate" required onchange="loadSlots(this.value)">
+                <div id="slotsContainer" class="slots-container" style="display:none;">
+                    <p class="slots-label">Available Time Slots</p>
+                    <div id="slotsGrid" class="slots-grid"></div>
+                    <input type="hidden" name="time" id="selectedTime" required>
+                </div>
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <button class="close" onclick="closeModal('signupModal')" aria-label="Close">&times;</button>
+            <h2 id="authTitle">Create Account</h2>
+            <div id="signupView">
+                <form class="signup-form" onsubmit="handleSignup(event)">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="tel" name="phone" placeholder="Phone Number">
+                    <input type="password" name="password" placeholder="Password" required minlength="6">
+                    <input type="password" name="confirm" placeholder="Confirm Password" required minlength="6">
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p class="form-footer">Already have an account? <a href="#" onclick="switchToLogin()">Login</a></p>
+            </div>
+            <div id="loginView" style="display:none;">
+                <form class="signup-form" onsubmit="handleLogin(event)">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p class="form-footer">Don't have an account? <a href="#" onclick="switchToSignup()">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <div class="logo">KANUPRIT</div>
+                <p>Where beauty meets artistry.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#services">Services</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#schedule">Hours</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p class="footer-copy">&copy; 2025 KANUPRIT Salon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
